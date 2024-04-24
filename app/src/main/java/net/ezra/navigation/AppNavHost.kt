@@ -18,6 +18,8 @@ import net.ezra.ui.home.HomeScreen
 import net.ezra.ui.products.AddProductScreen
 import net.ezra.ui.products.ProductDetailScreen
 import net.ezra.ui.products.ProductListScreen
+import net.ezra.ui.productstwo.AddProductTwo
+import net.ezra.ui.productstwo.ProductListScreenTwo
 import net.ezra.ui.students.AddStudents
 import net.ezra.ui.students.Search
 import net.ezra.ui.students.Students
@@ -97,6 +99,15 @@ fun AppNavHost(
             val productId = backStackEntry.arguments?.getString("productId") ?: ""
             ProductDetailScreen(navController, productId)
         }
+
+        composable(ROUTE_ADD_PROT) {
+            AddProductTwo(navController)
+        }
+
+        composable(ROUTE_VIEW_PROT) {
+            ProductListScreenTwo(navController)
+        }
+
 
 
 

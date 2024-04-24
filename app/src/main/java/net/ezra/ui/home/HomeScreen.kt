@@ -17,6 +17,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 //noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.BottomNavigation
 //noinspection UsingMaterialAndMaterial3Libraries
@@ -52,12 +53,14 @@ import androidx.navigation.NavHostController
 import net.ezra.R
 import net.ezra.navigation.ROUTE_ABOUT
 import net.ezra.navigation.ROUTE_ADD_PRODUCT
+import net.ezra.navigation.ROUTE_ADD_PROT
 import net.ezra.navigation.ROUTE_ADD_STUDENTS
 import net.ezra.navigation.ROUTE_DASHBOARD
 import net.ezra.navigation.ROUTE_HOME
 import net.ezra.navigation.ROUTE_LOGIN
 import net.ezra.navigation.ROUTE_SEARCH
 import net.ezra.navigation.ROUTE_VIEW_PROD
+import net.ezra.navigation.ROUTE_VIEW_PROT
 import net.ezra.navigation.ROUTE_VIEW_STUDENTS
 
 
@@ -127,7 +130,6 @@ fun HomeScreen(navController: NavHostController) {
                     }
             ) {
 
-
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -157,15 +159,31 @@ fun HomeScreen(navController: NavHostController) {
 
                     Spacer(modifier = Modifier.height(15.dp))
 
+
+
                     Text(
                         modifier = Modifier
 
                             .clickable {
-                                navController.navigate(ROUTE_LOGIN) {
+                                navController.navigate(ROUTE_ADD_PROT) {
                                     popUpTo(ROUTE_HOME) { inclusive = true }
                                 }
                             },
-                        text = "Login Here",
+                        text = "Add product two",
+                        textAlign = TextAlign.Center,
+                        fontSize = 20.sp,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+
+                    Text(
+                        modifier = Modifier
+
+                            .clickable {
+                                navController.navigate(ROUTE_VIEW_PROT) {
+                                    popUpTo(ROUTE_HOME) { inclusive = true }
+                                }
+                            },
+                        text = "view product two",
                         textAlign = TextAlign.Center,
                         fontSize = 20.sp,
                         color = MaterialTheme.colorScheme.onSurface
@@ -216,9 +234,9 @@ fun HomeScreen(navController: NavHostController) {
                     )
 
 
-                    
+
                     Spacer(modifier = Modifier.height(15.dp))
-                    
+
                     Text(
                         text = "You're welcome",
                         fontSize = 30.sp,
@@ -227,7 +245,18 @@ fun HomeScreen(navController: NavHostController) {
 
 
 
+
+
+
                 }
+
+
+
+
+
+
+
+
 
             }
 
